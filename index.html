@@ -21,6 +21,9 @@
         .inter {
             font-family: "Inter", sans-serif;
         }
+        .footer-line{
+            width: inherit;
+        }
     </style>
     <title>Aura</title>
 </head>
@@ -71,11 +74,12 @@
                             </button>
                         </div>
                     </li>
-                    <li><div class="tooltip" data-tip="Report">
-                        <button class="btn btn-circle">
-                            <img src="images/flag-icon.svg" alt="">
-                        </button>
-                      </div>
+                    <li>
+                        <div class="tooltip" data-tip="Report">
+                            <button class="btn btn-circle">
+                                <img src="images/flag-icon.svg" alt="">
+                            </button>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -145,13 +149,19 @@
                             costume mishap because, hey that’s your
                             prerogative</p>
                         <hr class="border-dashed border-2 text-[#12132D40]">
-                        <div class="flex font-normal text-[#12132D99] inter space-x-6">
-                            <small class="flex justify-center items-center gap-3"><i
-                                    class="fa-regular fa-message"></i><span>505</span></small>
-                            <small class="flex justify-center items-center gap-3"><i
-                                    class="fa-regular fa-eye"></i><span>505</span></small>
-                            <small class="flex justify-center items-center gap-3"><i
-                                    class="fa-regular fa-clock"></i><span>505</span></small>
+                        <div class="flex justify-between font-normal text-[#12132D99] inter">
+                            <div class="flex space-x-6">
+                                <small class="flex justify-center items-center gap-3"><i
+                                        class="fa-regular fa-message"></i><span>505</span>
+                                </small>
+                                <small class="flex justify-center items-center gap-3"><i
+                                        class="fa-regular fa-eye"></i><span>505</span>
+                                </small>
+                                <small class="flex justify-center items-center gap-3"><i
+                                        class="fa-regular fa-clock"></i><span>505</span>
+                                </small>
+                            </div>
+                            <button class=""><img src="images/email 1.svg" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -177,16 +187,64 @@
             </div>
         </section>
         <!-- join section -->
-        <section class="flex flex-col lg:flex-row justify-center items-center gap-5 p-10 lg:p-20 bg-[#12132D] rounded-3xl mx-5 mt-24">
+        <section
+            class="flex flex-col lg:flex-row justify-center items-center gap-5 p-10 lg:p-20 bg-[#12132D] rounded-3xl mx-5 mt-24">
             <div class="space-y-6 text-center lg:text-left">
                 <h1 class="font-black text-4xl mulish text-white">Join Our Forum</h1>
-                <p class="font-normal text-xl text-white">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
-                <button class="btn bg-[#797DFC] text-white font-bold text-xl mulish border-none rounded-full py-1 px-8">Registered Now</button>
+                <p class="font-normal text-xl text-white">Share your favorite opinion and win and wp forum coffee mug!
+                    Yes, you can run unit tests and view the results directly within the app. </p>
+                <button
+                    class="btn bg-[#797DFC] text-white font-bold text-xl mulish border-none rounded-full py-1 px-8">Registered
+                    Now</button>
             </div>
             <img src="images/joinforum.png" alt="">
         </section>
+        <!-- Latest Posts section -->
+        <section class="mt-24 mx-5">
+            <!-- Latest Posts title -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-black text-black mulish mb-6">Latest Posts</h2>
+                <p class="text-xl font-normal inter text-[#12132D99]">Yes, you can run unit tests and view the results
+                    directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+            <!-- Latest post container -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div class="card w-96 bg-base-100 shadow-xl border-[#12132D26] border-2">
+                    <figure class="px-10 pt-10">
+                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
+                            class="rounded-xl" />
+                    </figure>
+                    <div class="card-body">
+                        <small class="flex items-center gap-3 text-[#12132D99] font-normal"><i class="fa-solid fa-calendar-days"></i><span>29 January 2024</span>
+                        </small>
+                        <p class="font-extrabold text-lg mulish ">What will a mars habitat force that impact in our daily life!!!</p>
+                        <p class="font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+                        <div class="flex items-center gap-4">
+                            <img src="images/Ellipse 1.png" alt="">
+                            <div>
+                                <h3 class="font-bold mulish text-[#12132D]">Cameron Williamson</h3>
+                                <small class="font-normal text-sm text-[#12132D99]">Unknown</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer class="footer footer-center gap-6 p-10 bg-base-200 text-base-content rounded mt-24">
+        <h1 class="font-black text-4xl text-[#12132D] mulish">ReTro</h1> 
+        <p class="font-normal text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        <nav>
+          <div class="grid grid-flow-col gap-4 text-3xl">
+            <a><i class="fa-brands fa-twitter"></i></a>
+            <a><i class="fa-brands fa-facebook"></i></a>
+            <a><i class="fa-brands fa-square-instagram"></i></a>
+            <a><i class="fa-brands fa-github"></i></a>
+          </div>
+        </nav> 
+        <hr class="border-2 border-dashed border-[#30325E1A] footer-line">
+          <p class="font-light mulish text-[#12132D80]">2017, All Rights Reserved.</p>
+      </footer>
     <script src="js/index.js"></script>
 </body>
 
