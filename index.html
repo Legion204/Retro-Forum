@@ -28,8 +28,8 @@
 <body>
     <header class="container mx-auto">
         <!-- nav bar -->
-        <div class="navbar bg-base-100">
-            <div class="navbar-start w-[350%]">
+        <div class="navbar bg-base-100 mt-5">
+            <div class="navbar-start w-[300%]">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -42,28 +42,41 @@
                         class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>Home</a></li>
                         <li><a>Tooltip</a></li>
-                        <li><a>Account</a></li>
-                        <li><a>About</a></li>
+                        <li><a>Add</a></li>
+                        <li><a>Report</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-ghost text-4xl font-black mulish">ReTro</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 space-x-3">
-                    <li><button class="btn btn-circle">
-                            <img src="images/home-icon.svg" alt="">
-                        </button></li>
                     <li>
-                        <button class="btn btn-circle">
-                            <img src="images/pen-icon.svg" alt="">
-                        </button>
+                        <div class="tooltip" data-tip="home">
+                            <button class="btn btn-circle">
+                                <img src="images/home-icon.svg" alt="">
+                            </button>
+                        </div>
                     </li>
-                    <li><button class="btn btn-circle">
-                            <img src="images/account-icon.svg" alt="">
-                        </button></li>
-                    <li><button class="btn btn-circle">
+                    <li>
+                        <div class="tooltip" data-tip="Write post">
+                            <button class="btn btn-circle">
+                                <img src="images/pen-icon.svg" alt="">
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="tooltip" data-tip="Add">
+                            <button class="btn btn-circle">
+                                <img src="images/account-icon.svg" alt="">
+                            </button>
+                        </div>
+                    </li>
+                    <li><div class="tooltip" data-tip="Report">
+                        <button class="btn btn-circle">
                             <img src="images/flag-icon.svg" alt="">
-                        </button></li>
+                        </button>
+                      </div>
+                    </li>
                 </ul>
             </div>
             <div class="navbar-end">
@@ -73,7 +86,7 @@
         </div>
         <!-- banner -->
         <div
-            class=" flex flex-col lg:flex-row justify-around lg:justify-center items-center gap-10 lg:gap-28 bg-[url(images/bgbanner.png)] bg-no-repeat bg-cover bg-center bg-[#12132D] min-h-screen rounded-3xl p-5 lg:p-0 m-5">
+            class=" flex flex-col lg:flex-row justify-around lg:justify-center items-center gap-10 lg:gap-28 bg-[url(images/bgbanner.png)] bg-no-repeat bg-cover bg-center bg-[#12132D] min-h-screen rounded-3xl p-5 lg:p-0 mx-5">
             <div class=" text-center lg:text-start space-y-2 lg:space-y-5">
                 <h1 class="font-black text-3xl lg:text-6xl mulish text-white">Welcome to the <br> <span
                         class="bg-gradient-to-r from-[#797DFC] to-[#797DFC00] text-transparent bg-clip-text">ReTro</span>
@@ -162,6 +175,15 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <!-- join section -->
+        <section class="flex flex-col lg:flex-row justify-center items-center gap-5 p-10 lg:p-20 bg-[#12132D] rounded-3xl mx-5 mt-24">
+            <div class="space-y-6 text-center lg:text-left">
+                <h1 class="font-black text-4xl mulish text-white">Join Our Forum</h1>
+                <p class="font-normal text-xl text-white">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                <button class="btn bg-[#797DFC] text-white font-bold text-xl mulish border-none rounded-full py-1 px-8">Registered Now</button>
+            </div>
+            <img src="images/joinforum.png" alt="">
         </section>
     </main>
     <footer></footer>
