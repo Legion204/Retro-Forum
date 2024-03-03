@@ -98,8 +98,8 @@
                     Forum</h1>
                 <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
                 <div class="join">
-                    <input class="input input-bordered join-item rounded-full" placeholder="Email"/>
-                    <button class="btn join-item bg-[#797DFC] text-white font-bold text-xl mulish rounded-full">Search</button>
+                    <input id="input-field" class="input input-bordered join-item rounded-full" placeholder="Search here anything"/>
+                    <button onclick="handelSearch()" class="btn join-item bg-[#797DFC] text-white font-bold text-xl mulish rounded-full">Search</button>
                   </div>
             </div>
             <div class="bg-[#FFFFFF] mulish text-2xl font-medium p-6 lg:p-12 rounded-3xl">
@@ -172,29 +172,8 @@
                     directly within the app. The integrated testing features allow for a streamlined .</p>
             </div>
             <!-- Latest post container -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                <div class="card w-96 bg-base-100 shadow-xl border-[#12132D26] border-2">
-                    <figure class="px-10 pt-10">
-                        <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes"
-                            class="rounded-xl" />
-                    </figure>
-                    <div class="card-body">
-                        <small class="flex items-center gap-3 text-[#12132D99] font-normal"><i
-                                class="fa-solid fa-calendar-days"></i><span>29 January 2024</span>
-                        </small>
-                        <p class="font-extrabold text-lg mulish ">What will a mars habitat force that impact in our
-                            daily life!!!</p>
-                        <p class="font-normal text-[#12132D99]">Yes, you can run unit tests and view the results
-                            directly within the app. </p>
-                        <div class="flex items-center gap-4">
-                            <img src="images/Ellipse 1.png" alt="">
-                            <div>
-                                <h3 class="font-bold mulish text-[#12132D]">Cameron Williamson</h3>
-                                <small class="font-normal text-sm text-[#12132D99]">Unknown</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="latest-post-container" class="flex flex-col lg:flex-row justify-center gap-6">
+                
             </div>
         </section>
     </main>
