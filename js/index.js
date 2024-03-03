@@ -1,4 +1,6 @@
 const allPostContainer = document.getElementById('all-post-container');
+const watchListContainer = document.getElementById('watch-list-container');
+let viewCountNum = 1;
 
 
 // load all post data
@@ -14,7 +16,6 @@ loadAllPosts()
 const displayAllPost = (allPostData) => {
 
     allPostData.forEach(data => {
-        console.log(data.author)
         const singlePost = document.createElement('div');
         singlePost.innerHTML = `
         <div class="flex justify-stretch gap-6 bg-[#F3F3F5] p-3 lg:p-10 rounded-3xl">
@@ -43,11 +44,29 @@ const displayAllPost = (allPostData) => {
                                             class="fa-regular fa-clock"></i><span>${data.posted_time} min</span>
                                     </small>
                                 </div>
-                                <button class=""><img src="images/email 1.svg" alt=""></button>
+                                <button onclick="readBtn('${data.title.replace("'","")}','${data.view_count}');" class=""><img src="images/email 1.svg" alt=""></button>
                             </div>
                         </div>
                     </div>
         `
         allPostContainer.appendChild(singlePost);
     });
+}
+
+// add to watched list
+const readBtn = (title,view)=>{
+    const viewCount =document.getElementById('view-count');
+    viewCount.innerText= viewCountNum++
+    const watchList = document.createElement('div');
+    watchList.innerHTML=`
+    <div class="bg-[#FFFFFF] p-4 rounded-2xl mb-4">
+                        <div class="flex justify-between gap-5">
+                            <h2 class="font-semibold mulish text-[#12132D]">${title}</h2>
+                            <small class="flex justify-center items-center gap-3 font-normal inter"><i
+                                    class="fa-regular fa-eye"></i><span>${view}</span>
+                            </small>
+                        </div>
+                    </div>
+    `
+    watchListContainer.appendChild(watchList);
 }
