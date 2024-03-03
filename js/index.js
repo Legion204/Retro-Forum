@@ -1,7 +1,6 @@
 const allPostContainer = document.getElementById('all-post-container');
 const watchListContainer = document.getElementById('watch-list-container');
 const latestPostContainer = document.getElementById('latest-post-container');
-const activeIndicator = document.querySelector('.indicator-item');
 let viewCountNum = 1;
 
 
@@ -15,12 +14,12 @@ const loadAllPosts = async () => {
 loadAllPosts()
 
 // load post data by search
-const loadSearchPosts = async (category,allPostData) => {
+const loadSearchPosts = async (category, allPostData) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
     const data = await res.json();
     const allSearchData = data.posts;
     displaySearchPost(allSearchData);
-    
+
 }
 loadSearchPosts()
 
@@ -36,11 +35,12 @@ loadLatestPost();
 // display all post
 const displayAllPost = (allPostData) => {
     allPostData.forEach(data => {
+
         const singlePost = document.createElement('div');
         singlePost.innerHTML = `
-        <div class="flex justify-stretch gap-6 bg-[#F3F3F5] p-3 lg:p-10 rounded-3xl">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-stretch gap-6 bg-[#F3F3F5] p-3 lg:p-10 rounded-3xl">
                         <div class="indicator">
-                            <span id="active-indicator" class="indicator-item badge badge-secondary"></span>
+                            <span id="active-indicator" class="indicator-item ${data.isActive? 'bg-green-500 , border-green-500':'bg-red-500 , border-red-500'} badge badge-secondary"></span>
                             <div class="grid w-20 h-20 bg-base-300 place-items-center rounded-2xl"><img class ="rounded-2xl" src="${data.image}" alt="Shoes"
                             class="" /></div>
                         </div>
@@ -52,7 +52,7 @@ const displayAllPost = (allPostData) => {
                             <h3 class="font-bold text-xl mulish text-[#12132D]">${data.title}</h3>
                             <p class="font-normal inter text-[#12132D99]">${data.description}</p>
                             <hr class="border-dashed border-2 text-[#12132D40]">
-                            <div class="flex flex-col lg:flex-row lg:justify-between font-normal text-[#12132D99] inter">
+                            <div class="flex flex-row justify-between font-normal text-[#12132D99] inter">
                                 <div class="flex space-x-6">
                                     <small class="flex justify-center items-center gap-3"><i
                                             class="fa-regular fa-message"></i><span>${data.comment_count}</span>
@@ -70,17 +70,18 @@ const displayAllPost = (allPostData) => {
                     </div>
         `
         allPostContainer.appendChild(singlePost);
-    });
 
+    });
+    toggleLoadingBar(false);
 };
 // display search post
 const displaySearchPost = (allSearchData) => {
     allSearchData.forEach(data => {
         const singlePost = document.createElement('div');
         singlePost.innerHTML = `
-        <div class="flex justify-stretch gap-6 bg-[#F3F3F5] p-3 lg:p-10 rounded-3xl">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start lg:justify-stretch gap-6 bg-[#F3F3F5] p-3 lg:p-10 rounded-3xl">
                         <div class="indicator">
-                            <span id="active-indicator" class="indicator-item badge badge-secondary"></span>
+                            <span id="active-indicator" class="indicator-item ${data.isActive? 'bg-green-500 , border-green-500':'bg-red-500 , border-red-500'} badge badge-secondary"></span>
                             <div class="grid w-20 h-20 bg-base-300 place-items-center rounded-2xl"><img class ="rounded-2xl" src="${data.image}" alt="Shoes"
                             class="" /></div>
                         </div>
@@ -92,7 +93,7 @@ const displaySearchPost = (allSearchData) => {
                             <h3 class="font-bold text-xl mulish text-[#12132D]">${data.title}</h3>
                             <p class="font-normal inter text-[#12132D99]">${data.description}</p>
                             <hr class="border-dashed border-2 text-[#12132D40]">
-                            <div class="flex flex-col lg:flex-row lg:justify-between font-normal text-[#12132D99] inter">
+                            <div class="flex flex-row justify-between font-normal text-[#12132D99] inter">
                                 <div class="flex space-x-6">
                                     <small class="flex justify-center items-center gap-3"><i
                                             class="fa-regular fa-message"></i><span>${data.comment_count}</span>
@@ -109,9 +110,11 @@ const displaySearchPost = (allSearchData) => {
                         </div>
                     </div>
         `
-        allPostContainer.appendChild(singlePost);
+        setTimeout(() => {
+            allPostContainer.appendChild(singlePost);
+        }, 2000);
     });
-
+    toggleLoadingBar(false);
 };
 
 
@@ -167,15 +170,29 @@ const displayLatestPost = (latestPostData) => {
 
 
 // handel search
-const handelSearch = (category)=>{
+const handelSearch = (category) => {
+    toggleLoadingBar(true);
     const inputField = document.getElementById('input-field').value;
-    if(inputField === 'all'){
-        allPostContainer.innerHTML='';
+    if (inputField === 'all') {
+        allPostContainer.innerHTML = '';
         loadAllPosts();
     }
-    else{
-        allPostContainer.innerHTML='';
+    else {
+        allPostContainer.innerHTML = '';
         loadSearchPosts(inputField);
     }
-    
+
+};
+
+// loading bars
+const toggleLoadingBar = (isLoading) => {
+    const loadingBar = document.getElementById('loading');
+    if (isLoading) {
+        loadingBar.classList.remove('hidden');
+    }
+    else {
+        setTimeout(() => {
+            loadingBar.classList.add('hidden');
+        }, 2000);
+    }
 };
