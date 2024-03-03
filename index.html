@@ -21,7 +21,8 @@
         .inter {
             font-family: "Inter", sans-serif;
         }
-        .footer-line{
+
+        .footer-line {
             width: inherit;
         }
     </style>
@@ -96,11 +97,10 @@
                         class="bg-gradient-to-r from-[#797DFC] to-[#797DFC00] text-transparent bg-clip-text">ReTro</span>
                     Forum</h1>
                 <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
-                <div class="relative">
-                    <input type="text" placeholder="Type here" class="input w-full max-w-xs max-h-20 rounded-full" />
-                    <button
-                        class="btn bg-[#797DFC] text-white font-bold text-xl mulish rounded-full border-none absolute left-64 lg:">Search</button>
-                </div>
+                <div class="join">
+                    <input class="input input-bordered join-item rounded-full" placeholder="Email"/>
+                    <button class="btn join-item bg-[#797DFC] text-white font-bold text-xl mulish rounded-full">Search</button>
+                  </div>
             </div>
             <div class="bg-[#FFFFFF] mulish text-2xl font-medium p-6 lg:p-12 rounded-3xl">
                 <div class="flex gap-10">
@@ -134,36 +134,8 @@
             <!-- all post and watch list container -->
             <div class="flex flex-col lg:flex-row gap-6 justify-center">
                 <!-- all post container -->
-                <div class="flex justify-around gap-6 bg-[#F3F3F5] p-10 rounded-3xl">
-                    <div>
-                        <img src="images/Rectangle 4.svg" alt="">
-                    </div>
-                    <div class="space-y-5">
-                        <div class=" flex gap-5 font-medium inter">
-                            <small># Music</small>
-                            <small>Author : <span>Awlad Hossain</span></small>
-                        </div>
-                        <h3 class="font-bold text-xl mulish text-[#12132D]">10 Kids Unaware of Their Halloween Costume
-                        </h3>
-                        <p class="font-normal inter text-[#12132D99]">It’s one thing to subject yourself to ha Halloween
-                            costume mishap because, hey that’s your
-                            prerogative</p>
-                        <hr class="border-dashed border-2 text-[#12132D40]">
-                        <div class="flex justify-between font-normal text-[#12132D99] inter">
-                            <div class="flex space-x-6">
-                                <small class="flex justify-center items-center gap-3"><i
-                                        class="fa-regular fa-message"></i><span>505</span>
-                                </small>
-                                <small class="flex justify-center items-center gap-3"><i
-                                        class="fa-regular fa-eye"></i><span>505</span>
-                                </small>
-                                <small class="flex justify-center items-center gap-3"><i
-                                        class="fa-regular fa-clock"></i><span>505</span>
-                                </small>
-                            </div>
-                            <button class=""><img src="images/email 1.svg" alt=""></button>
-                        </div>
-                    </div>
+                <div id="all-post-container" class="flex flex-col gap-6">
+                    
                 </div>
                 <!-- watch list container -->
                 <div class="bg-[#12132D0D] rounded-3xl p-6">
@@ -215,10 +187,13 @@
                             class="rounded-xl" />
                     </figure>
                     <div class="card-body">
-                        <small class="flex items-center gap-3 text-[#12132D99] font-normal"><i class="fa-solid fa-calendar-days"></i><span>29 January 2024</span>
+                        <small class="flex items-center gap-3 text-[#12132D99] font-normal"><i
+                                class="fa-solid fa-calendar-days"></i><span>29 January 2024</span>
                         </small>
-                        <p class="font-extrabold text-lg mulish ">What will a mars habitat force that impact in our daily life!!!</p>
-                        <p class="font-normal text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+                        <p class="font-extrabold text-lg mulish ">What will a mars habitat force that impact in our
+                            daily life!!!</p>
+                        <p class="font-normal text-[#12132D99]">Yes, you can run unit tests and view the results
+                            directly within the app. </p>
                         <div class="flex items-center gap-4">
                             <img src="images/Ellipse 1.png" alt="">
                             <div>
@@ -232,19 +207,20 @@
         </section>
     </main>
     <footer class="footer footer-center gap-6 p-10 bg-base-200 text-base-content rounded mt-24">
-        <h1 class="font-black text-4xl text-[#12132D] mulish">ReTro</h1> 
-        <p class="font-normal text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        <h1 class="font-black text-4xl text-[#12132D] mulish">ReTro</h1>
+        <p class="font-normal text-[#12132D99]">Contrary to popular belief, Lorem Ipsum is not simply random text. It
+            has roots in a piece of classical Latin literature from 45 BC</p>
         <nav>
-          <div class="grid grid-flow-col gap-4 text-3xl">
-            <a><i class="fa-brands fa-twitter"></i></a>
-            <a><i class="fa-brands fa-facebook"></i></a>
-            <a><i class="fa-brands fa-square-instagram"></i></a>
-            <a><i class="fa-brands fa-github"></i></a>
-          </div>
-        </nav> 
+            <div class="grid grid-flow-col gap-4 text-3xl">
+                <a><i class="fa-brands fa-twitter"></i></a>
+                <a><i class="fa-brands fa-facebook"></i></a>
+                <a><i class="fa-brands fa-square-instagram"></i></a>
+                <a><i class="fa-brands fa-github"></i></a>
+            </div>
+        </nav>
         <hr class="border-2 border-dashed border-[#30325E1A] footer-line">
-          <p class="font-light mulish text-[#12132D80]">2017, All Rights Reserved.</p>
-      </footer>
+        <p class="font-light mulish text-[#12132D80]">2017, All Rights Reserved.</p>
+    </footer>
     <script src="js/index.js"></script>
 </body>
 
