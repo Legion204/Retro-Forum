@@ -91,18 +91,17 @@
         </div>
         <!-- banner -->
         <div
-            class=" flex flex-col lg:flex-row justify-around lg:justify-center items-center gap-10 lg:gap-28 bg-[url(images/bgbanner.png)] bg-no-repeat bg-cover bg-center bg-[#12132D] min-h-screen rounded-3xl p-5 lg:p-0 mx-5">
+            class=" flex flex-col lg:flex-row justify-around lg:justify-center items-center gap-10 lg:gap-28 bg-[url(images/bgbanner.png)] bg-no-repeat bg-cover bg-center bg-[#12132D] min-h-[80svh] rounded-3xl p-5 lg:p-0 mx-5">
             <div class=" text-center lg:text-start space-y-2 lg:space-y-5">
                 <h1 class="font-black text-3xl lg:text-6xl mulish text-white">Welcome to the <br> <span
                         class="bg-gradient-to-r from-[#797DFC] to-[#797DFC00] text-transparent bg-clip-text">AuRa</span>
                     Forum</h1>
                 <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
-                <div class="join">
-                    <input id="input-field" class="input input-bordered join-item rounded-full"
-                        placeholder="Search here anything" />
+                <label class="input input-bordered flex justify-between pr-0 lg:w-96 h-14 rounded-full items-center gap-2">
+                    <input id="input-field" class="w-28 h-11" type="text" class="grow" placeholder="Search here anything" />
                     <button onclick="handelSearch()"
-                        class="btn join-item bg-[#797DFC] text-white font-bold text-xl mulish rounded-full">Search</button>
-                </div>
+                        class="btn bg-[#797DFC] text-white font-bold text-xl mulish rounded-full mr-1">Search</button>
+                  </label>
             </div>
             <div class="bg-[#FFFFFF] mulish text-2xl font-medium p-6 lg:p-12 rounded-3xl">
                 <div class="flex gap-10">
